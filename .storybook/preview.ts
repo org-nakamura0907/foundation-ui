@@ -1,11 +1,13 @@
 import type { Preview } from '@storybook/nextjs-vite'
 
+import "../src/app/globals.css"
+
 const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 
@@ -14,8 +16,12 @@ const preview: Preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: 'todo'
+    },
+    docs: {
+      toc: true
     }
   },
+  tags: ["autodocs"]
 };
 
 export default preview;
