@@ -6,8 +6,8 @@ const headingVariants = ["h1"] as const;
 const variants = [...headingVariants, "body"] as const;
 type Variant = typeof variants[number]
 
-const asArry = [...headingVariants, "p"] as const;
-type AsType = typeof asArry[number];
+const asArray = [...headingVariants, "p"] as const;
+type AsType = typeof asArray[number];
 
 type TypographyProps<T extends AsType> = {
     /** テキストの見た目 */
@@ -32,7 +32,7 @@ const typographyVariants = cva(
 )
 
 const BaseTypography = <T extends AsType = "p",>({ variant = "body", as = "p", ...props }: TypographyProps<T>) => {
-    const Component = asArry.includes(as) ? as : 'p';
+    const Component = asArray.includes(as) ? as : 'p';
 
     return (
         <Component className={cn(typographyVariants({ variant }))} {...props} />
