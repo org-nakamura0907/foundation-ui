@@ -4,13 +4,13 @@
   "homepage": "https://github.com/org-nakamura0907/foundation-ui",
   "items": [
     {
-      "name": "button",
+      "name": "typography",
       "type": "registry:component",
-      "title": "Button",
-      "description": "Button",
+      "title": "Typography",
+      "description": "Typography",
       "files": [
         {
-          "path": "src/shared/ui/button.tsx",
+          "path": "src/registry/typography/typography.tsx",
           "type": "registry:component"
         }
       ]
