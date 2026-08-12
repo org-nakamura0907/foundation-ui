@@ -41,6 +41,8 @@ This project is a **custom shadcn/ui-compatible component registry** — consume
 
 Tailwind CSS v4 with CSS custom properties for theming. Design tokens are defined as CSS variables in `src/app/globals.css` using oklch color space. Dark mode is applied via the `.dark` class (not `prefers-color-scheme`).
 
+When implementing or modifying components, refer to `DESIGN.md` for the design system's color tokens, typography scale, and border-radius values.
+
 The `cn()` helper from `@/shared/lib/utils` combines `clsx` + `tailwind-merge` and should be used for all className composition.
 
 Components use `class-variance-authority` (cva) for variant management.
