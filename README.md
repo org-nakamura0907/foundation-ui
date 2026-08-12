@@ -17,4 +17,3 @@ direnv allow
 
 pnpm install
 ```
-

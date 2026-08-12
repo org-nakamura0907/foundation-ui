@@ -57,22 +57,22 @@ All achromatic tokens have `chroma = 0`, meaning they are pure grays defined onl
 
 Dark mode swaps lightness while preserving semantic intent. Override values applied under the `.dark` class:
 
-| Token | Light | Dark |
-|---|---|---|
-| background | oklch(1 0 0) | oklch(0.145 0 0) |
-| foreground | oklch(0.145 0 0) | oklch(0.985 0 0) |
-| primary | oklch(0.205 0 0) | oklch(0.922 0 0) |
-| primary-foreground | oklch(0.985 0 0) | oklch(0.205 0 0) |
-| secondary | oklch(0.97 0 0) | oklch(0.269 0 0) |
-| secondary-foreground | oklch(0.205 0 0) | oklch(0.985 0 0) |
-| muted | oklch(0.97 0 0) | oklch(0.269 0 0) |
-| muted-foreground | oklch(0.556 0 0) | oklch(0.708 0 0) |
-| accent | oklch(0.97 0 0) | oklch(0.269 0 0) |
-| accent-foreground | oklch(0.205 0 0) | oklch(0.985 0 0) |
-| destructive | oklch(0.577 0.245 27.325) | oklch(0.704 0.191 22.216) |
-| border | oklch(0.922 0 0) | oklch(1 0 0 / 10%) |
-| input | oklch(0.922 0 0) | oklch(1 0 0 / 15%) |
-| ring | oklch(0.708 0 0) | oklch(0.556 0 0) |
+| Token                | Light                     | Dark                      |
+| -------------------- | ------------------------- | ------------------------- |
+| background           | oklch(1 0 0)              | oklch(0.145 0 0)          |
+| foreground           | oklch(0.145 0 0)          | oklch(0.985 0 0)          |
+| primary              | oklch(0.205 0 0)          | oklch(0.922 0 0)          |
+| primary-foreground   | oklch(0.985 0 0)          | oklch(0.205 0 0)          |
+| secondary            | oklch(0.97 0 0)           | oklch(0.269 0 0)          |
+| secondary-foreground | oklch(0.205 0 0)          | oklch(0.985 0 0)          |
+| muted                | oklch(0.97 0 0)           | oklch(0.269 0 0)          |
+| muted-foreground     | oklch(0.556 0 0)          | oklch(0.708 0 0)          |
+| accent               | oklch(0.97 0 0)           | oklch(0.269 0 0)          |
+| accent-foreground    | oklch(0.205 0 0)          | oklch(0.985 0 0)          |
+| destructive          | oklch(0.577 0.245 27.325) | oklch(0.704 0.191 22.216) |
+| border               | oklch(0.922 0 0)          | oklch(1 0 0 / 10%)        |
+| input                | oklch(0.922 0 0)          | oklch(1 0 0 / 15%)        |
+| ring                 | oklch(0.708 0 0)          | oklch(0.556 0 0)          |
 
 ## Typography
 
