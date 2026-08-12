@@ -8,11 +8,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 pnpm dev              # Next.js dev server (localhost:3000)
 pnpm build            # Production build
 pnpm lint             # ESLint
+pnpm format:check     # Prettier check
+pnpm knip             # Dead code / unused dependency check
+pnpm audit            # Dependency vulnerability scan
+pnpm test             # Run Storybook-based component tests via Vitest + Playwright (headless Chromium)
+pnpm check            # AI completion gate: run all static checks before reporting done
 pnpm storybook        # Storybook dev server (localhost:6006)
 pnpm build-storybook  # Build Storybook static site
-pnpm test             # Run Storybook-based component tests via Vitest + Playwright (headless Chromium)
 pnpm dlx shadcn build # Rebuild public/r/ from registry.json (run after adding/updating registry components)
 ```
+
+## Definition of Done
+
+Run `/done` before reporting implementation complete.
 
 ## Architecture
 

@@ -11,6 +11,8 @@
     "format:check": "prettier --check .",
     "knip": "knip",
     "audit": "node scripts/audit.mjs",
+    "test": "vitest",
+    "check": "prettier --check . && eslint && tsc --noEmit && knip && node scripts/gate-a.mjs && node scripts/gate-b.mjs",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build",
     "prepare": "husky"
