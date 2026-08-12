@@ -3,8 +3,7 @@ import { cva } from "class-variance-authority";
 import React from "react";
 
 const headingVariants = ["h1"] as const;
-const variants = [...headingVariants, "body"] as const;
-type Variant = (typeof variants)[number];
+type Variant = (typeof headingVariants)[number] | "body";
 
 const asArray = [...headingVariants, "p"] as const;
 type AsType = (typeof asArray)[number];

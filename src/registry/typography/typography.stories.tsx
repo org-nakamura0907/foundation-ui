@@ -5,6 +5,7 @@ import React from "react";
 
 const meta = {
   title: "Typography",
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component: TypographyComponent as React.ComponentType<any>,
 } satisfies Meta<typeof Typography>;
 
