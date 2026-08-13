@@ -10,9 +10,9 @@ type AsType = (typeof asArray)[number];
 
 type TypographyProps<T extends AsType> = {
   /** テキストの見た目 */
-  variant: Variant;
+  variant?: Variant;
   /** 実際にレンダリングされる要素のタグ */
-  as: AsType;
+  as?: AsType;
 } & React.ComponentPropsWithoutRef<T>;
 
 const typographyVariants = cva("m-0 font-sans", {
@@ -30,12 +30,16 @@ const typographyVariants = cva("m-0 font-sans", {
 const BaseTypography = <T extends AsType = "p">({
   variant = "body",
   as = "p",
+  className,
   ...props
 }: TypographyProps<T>) => {
   const Component = asArray.includes(as) ? as : "p";
 
   return (
-    <Component className={cn(typographyVariants({ variant }))} {...props} />
+    <Component
+      className={cn(typographyVariants({ variant }), className)}
+      {...props}
+    />
   );
 };
 const H1Typography = (props: React.ComponentPropsWithoutRef<"h1">) => (
