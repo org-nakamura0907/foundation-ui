@@ -22,8 +22,27 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     const el = canvas.getByText("デフォルトテキスト");
     expect(el.tagName).toBe("P");
-    expect(el).toHaveClass("font-normal", "text-base");
+    expect(el).toHaveClass("font-normal", "text-base", "text-foreground");
     expect(el).not.toHaveClass("font-extrabold");
+  },
+};
+
+export const DarkMode: Story = {
+  name: "ダークモード",
+  args: {
+    children: "ダークモードテキスト",
+  },
+  decorators: [
+    (Story) => (
+      <div className="dark bg-background p-4">
+        <Story />
+      </div>
+    ),
+  ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const el = canvas.getByText("ダークモードテキスト");
+    expect(el).toHaveClass("text-foreground");
   },
 };
 
@@ -97,6 +116,111 @@ export const BodyTypography: Story = {
     expect(el.tagName).toBe("P");
     expect(el).toHaveClass("font-normal", "text-base");
     expect(el).not.toHaveClass("font-extrabold");
+  },
+};
+
+export const H2Typography: Story = {
+  name: "Typography.H2",
+  args: {
+    children: "サンプルテキスト",
+  },
+  argTypes: {
+    as: { table: { disable: true } },
+    variant: { table: { disable: true } },
+  },
+  render: ({ ...args }) => {
+    return <TypographyComponent.H2 {...args} />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const el = canvas.getByText("サンプルテキスト");
+    expect(el.tagName).toBe("H2");
+    expect(el).toHaveClass("font-bold", "text-3xl");
+    expect(el).not.toHaveClass("font-extrabold");
+  },
+};
+
+export const H3Typography: Story = {
+  name: "Typography.H3",
+  args: {
+    children: "サンプルテキスト",
+  },
+  argTypes: {
+    as: { table: { disable: true } },
+    variant: { table: { disable: true } },
+  },
+  render: ({ ...args }) => {
+    return <TypographyComponent.H3 {...args} />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const el = canvas.getByText("サンプルテキスト");
+    expect(el.tagName).toBe("H3");
+    expect(el).toHaveClass("font-semibold", "text-2xl");
+    expect(el).not.toHaveClass("font-bold");
+  },
+};
+
+export const LeadTypography: Story = {
+  name: "Typography.Lead",
+  args: {
+    children: "サンプルテキスト",
+  },
+  argTypes: {
+    as: { table: { disable: true } },
+    variant: { table: { disable: true } },
+  },
+  render: ({ ...args }) => {
+    return <TypographyComponent.Lead {...args} />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const el = canvas.getByText("サンプルテキスト");
+    expect(el.tagName).toBe("P");
+    expect(el).toHaveClass("font-normal", "text-xl", "text-muted-foreground");
+    expect(el).not.toHaveClass("text-foreground");
+  },
+};
+
+export const MutedTypography: Story = {
+  name: "Typography.Muted",
+  args: {
+    children: "サンプルテキスト",
+  },
+  argTypes: {
+    as: { table: { disable: true } },
+    variant: { table: { disable: true } },
+  },
+  render: ({ ...args }) => {
+    return <TypographyComponent.Muted {...args} />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const el = canvas.getByText("サンプルテキスト");
+    expect(el.tagName).toBe("P");
+    expect(el).toHaveClass("font-normal", "text-sm", "text-muted-foreground");
+    expect(el).not.toHaveClass("text-base");
+  },
+};
+
+export const CodeTypography: Story = {
+  name: "Typography.Code",
+  args: {
+    children: "const x = 1;",
+  },
+  argTypes: {
+    as: { table: { disable: true } },
+    variant: { table: { disable: true } },
+  },
+  render: ({ ...args }) => {
+    return <TypographyComponent.Code {...args} />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const el = canvas.getByText("const x = 1;");
+    expect(el.tagName).toBe("CODE");
+    expect(el).toHaveClass("font-mono", "text-sm", "bg-muted");
+    expect(el).not.toHaveClass("font-sans");
   },
 };
 
