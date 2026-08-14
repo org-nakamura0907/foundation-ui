@@ -19,13 +19,14 @@ type TypographyProps<T extends AsType> = {
 const typographyVariants = cva("m-0 font-sans text-foreground", {
   variants: {
     variant: {
-      h1: "font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
-      h2: "font-bold text-3xl sm:text-4xl",
-      h3: "font-semibold text-2xl sm:text-3xl",
-      body: "font-normal text-base",
+      h1: "font-bold text-[2.5rem] leading-[1.35] tracking-[0.01em]",
+      h2: "font-bold text-[2rem] leading-[1.4] tracking-[0.01em]",
+      h3: "font-bold text-[1.5rem] leading-[1.45] tracking-[0.01em]",
+      body: "font-normal text-base leading-[1.8] tracking-[0.02em]",
       lead: "font-normal text-xl text-muted-foreground",
-      muted: "font-normal text-sm text-muted-foreground",
-      code: "font-mono text-sm bg-muted px-1 rounded",
+      muted:
+        "font-normal text-sm text-muted-foreground leading-[1.7] tracking-[0.02em]",
+      code: "font-mono text-sm leading-[1.7] bg-muted px-1 rounded",
     },
   },
   defaultVariants: {

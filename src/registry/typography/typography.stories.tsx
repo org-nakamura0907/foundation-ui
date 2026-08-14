@@ -85,7 +85,7 @@ export const H1Typography: Story = {
     const canvas = within(canvasElement);
     const el = canvas.getByText("サンプルテキスト");
     expect(el.tagName).toBe("H1");
-    expect(el).toHaveClass("font-extrabold", "text-4xl");
+    expect(el).toHaveClass("font-bold", "text-[2.5rem]");
     expect(el).not.toHaveClass("font-normal");
   },
 };
@@ -135,7 +135,7 @@ export const H2Typography: Story = {
     const canvas = within(canvasElement);
     const el = canvas.getByText("サンプルテキスト");
     expect(el.tagName).toBe("H2");
-    expect(el).toHaveClass("font-bold", "text-3xl");
+    expect(el).toHaveClass("font-bold", "text-[2rem]");
     expect(el).not.toHaveClass("font-extrabold");
   },
 };
@@ -156,8 +156,8 @@ export const H3Typography: Story = {
     const canvas = within(canvasElement);
     const el = canvas.getByText("サンプルテキスト");
     expect(el.tagName).toBe("H3");
-    expect(el).toHaveClass("font-semibold", "text-2xl");
-    expect(el).not.toHaveClass("font-bold");
+    expect(el).toHaveClass("font-bold", "text-[1.5rem]");
+    expect(el).not.toHaveClass("font-semibold");
   },
 };
 
@@ -198,7 +198,13 @@ export const MutedTypography: Story = {
     const canvas = within(canvasElement);
     const el = canvas.getByText("サンプルテキスト");
     expect(el.tagName).toBe("P");
-    expect(el).toHaveClass("font-normal", "text-sm", "text-muted-foreground");
+    expect(el).toHaveClass(
+      "font-normal",
+      "text-sm",
+      "text-muted-foreground",
+      "leading-[1.7]",
+      "tracking-[0.02em]",
+    );
     expect(el).not.toHaveClass("text-base");
   },
 };
@@ -219,7 +225,7 @@ export const CodeTypography: Story = {
     const canvas = within(canvasElement);
     const el = canvas.getByText("const x = 1;");
     expect(el.tagName).toBe("CODE");
-    expect(el).toHaveClass("font-mono", "text-sm", "bg-muted");
+    expect(el).toHaveClass("font-mono", "text-sm", "bg-muted", "leading-[1.7]");
     expect(el).not.toHaveClass("font-sans");
   },
 };
